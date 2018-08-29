@@ -1,0 +1,39 @@
+<div class="header-container">
+  <img class="background-img" src="./assets/img/logo.png" alt="">
+  <div class="list-title-wrapper">
+    {{ listTitle }}
+  </div>
+  <div class="suggest-btn-wrapper">
+    <nz-dropdown [nzTrigger]="'click'" [nzClickHide]="false" [nzPlacement]="'bottomRight'">
+      <button nz-dropdown nz-button [nzType]="'primary'">
+        <i class="anticon anticon-bulb"></i>Advice
+      </button>
+      <!-- hack nz-zorro! -->
+      <div nz-menu class="dropdown-content-wrapper">
+        <app-suggest></app-suggest>
+      </div>
+    </nz-dropdown>
+  </div>
+  <div class="sort-btn-wrapper">
+    <nz-dropdown [nzPlacement]="'bottomRight'">
+      <a nz-dropdown>
+        Order By
+        <i class="anticon anticon-down"></i>
+      </a>
+      <ul nz-menu nzSelectable>
+        <li nz-menu-item (click)="switchRankType('title')">
+          Name
+        </li>
+        <li nz-menu-item (click)="switchRankType('planAt')">
+          Plan time
+        </li>
+        <li nz-menu-item (click)="switchRankType('dueAt')">
+          Deadline
+        </li>
+        <li nz-menu-item (click)="switchRankType('completeFlag')">
+          Complete status
+        </li>
+      </ul>
+    </nz-dropdown>
+  </div>
+</div>

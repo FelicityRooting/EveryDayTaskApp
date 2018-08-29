@@ -1,0 +1,27 @@
+<div class="full-screen page-content">
+  <div class="wrapper">
+    <!--左上角头像图标-->
+    <img class="logo-img"
+         src="./assets/img/logo.png"
+         alt="">
+
+    <div class="text-wrapper">
+      <h1 class="title-text">
+        Today
+      </h1>
+    </div>
+    <input nz-input
+           placeholder="Please input your favorite username"
+           #usernameInput
+           [(ngModel)]="username">
+    <button nz-button
+            [nzType]="'primary'"
+            (click)="completeSetup()"
+            [disabled]="!usernameInput.value">
+      START
+    </button>
+    <div class="copy-right">
+      Copyright © 2018 FL
+    </div>
+  </div>
+</div>

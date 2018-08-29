@@ -1,0 +1,39 @@
+<div class="mask" (click)="goBack()">
+  <div class="container" (click)="$event.stopPropagation()">
+    <div style="text-align: right;">
+      <button nz-button nzType="primary" nzSize="large" nzShape="circle" (click)="confirm()" style="margin-right: 10px;">
+        <i class="anticon anticon-check"></i>
+      </button>
+      <button nz-button nz-popconfirm nzPlacement="bottomRight" nzTitle="Do you really want to delete this todo task？" (nzOnConfirm)="delete()" nzType="danger"
+              nzSize="large" nzShape="circle">
+        <i class="anticon anticon-delete"></i>
+      </button>
+    </div>
+    <label nz-checkbox (click)="$event.stopPropagation()" [(ngModel)]="currentTodo.completedFlag"></label>
+    <span>Record complete</span>
+    <nz-divider nzText="title" nzOrientation="left"></nz-divider>
+    <div class="input-container">
+      <input nz-input [(ngModel)]="currentTodo.title" placeholder="Todo task" [disabled]="!!currentTodo.completedFlag" id="title" name="title">
+    </div>
+    <nz-divider nzText="Date and notice" nzOrientation="left"></nz-divider>
+    <div class="due-date-container input-container">
+      <span class="prefix">Deadline</span>
+      <nz-date-picker [(ngModel)]="dueDate" [disabled]="!!currentTodo.completedFlag" [nzDisabledDate]="dueDisabledDate" (ngModelChange)="handleDueDateChange($event)">
+      </nz-date-picker>
+    </div>
+    <div class="plan-date-container input-container">
+      <span class="prefix">Plan date</span>
+      <nz-date-picker nzShowTime [(ngModel)]="planDate" [disabled]="!!currentTodo.completedFlag" [nzDisabledDate]="planDisabledDate"
+                      (ngModelChange)="handlePlanDateChange($event)">
+      </nz-date-picker>
+    </div>
+    <div class="input-container">
+      <span class="prefix">Planning remind</span>
+      <nz-switch [(ngModel)]="currentTodo.notifyMe" [nzControl]="true" [nzDisabled]="!!currentTodo.completedFlag" (click)="clickSwitch()"></nz-switch>
+    </div>
+    <nz-divider nzText="More" nzOrientation="left"></nz-divider>
+    <div class="input-container">
+      <textarea nz-input="" row="8" placeholder="Todo details" [disabled]="!!currentTodo.completedFlag" [(ngModel)]="currentTodo.desc"></textarea>
+    </div>
+  </div>
+</div>
