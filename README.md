@@ -25,3 +25,27 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Whole Process
+==================
+
+##### we should create a new project, and then install ng-zorro in this project.
+
+`$ ng new today-ng`
+
+`$ cd today-ng`
+
+`$ ng add ng-zorro-antd`
+
+##### Then type `ng serve`, and open localhost:4200, you should see ng zorro log.
+
+##### Now we need the setup page, that means the login and signup page, so we should create a setup module and component to handle it
+
+`ng g m pages/setup`
+
+`ng g c pages/setup --module pages/setup`
+
+##### We need to import `ngzorro` into `NgModule`, 具体可见`setup.module.ts`的代码
+
+##### Add router to our project, create `app/app-routing.module.ts`
+见`app.routing.module.ts`的code
