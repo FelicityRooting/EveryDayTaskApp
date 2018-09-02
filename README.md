@@ -49,3 +49,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ##### Add router to our project, create `app/app-routing.module.ts`
 见`app.routing.module.ts`的code
+
+##### change `app.module.ts` to import `setupModule` and `AppRoutingMoudle`

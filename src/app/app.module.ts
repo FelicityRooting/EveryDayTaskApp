@@ -23,19 +23,23 @@ registerLocaleData(zh);
     AppComponent
   ],
   imports: [
+    //下面两个module如果不import，会无法正确显示动画效果
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    //同样import ngzorro
     NgZorroAntdModule,
+    //import AppRoutingModule and SetupModule to config setup page
     AppRoutingModule,
     SetupModule,
+    //for main page
     MainRoutingModule,
     MainModule,
     SummaryModule,
     SettingModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
-  bootstrap: [AppComponent]
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }],//这里设置当前全局使用的语言包
+  bootstrap: [AppComponent]//The application launches by bootstrapping the root AppModule
 })
 export class AppModule { }
