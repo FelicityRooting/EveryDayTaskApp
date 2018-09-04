@@ -16,7 +16,7 @@ import { MainRoutingModule } from "./pages/main/main-routing.module";
 import {SummaryModule} from "./pages/summary/summary.module";
 import {SettingModule} from "./pages/setting/setting.module";
 
-registerLocaleData(zh);
+registerLocaleData(zh);//Register global data to be used internally by Angular
 
 @NgModule({
   declarations: [

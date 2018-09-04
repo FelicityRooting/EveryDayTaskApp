@@ -51,3 +51,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 见`app.routing.module.ts`的code
 
 ##### change `app.module.ts` to import `setupModule` and `AppRoutingMoudle`
+
+##### write `<router-outlet>` into app.component.html 
+
+##### write 用户名和初始化标记存入localstorage
